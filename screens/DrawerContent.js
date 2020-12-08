@@ -18,11 +18,13 @@ import {
 } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; 
 
+import { AuthContext } from '../components/context';
 
 export function DrawerContent(props) {
 
     const paperTheme = useTheme();
 
+    const { signOut }  = React.useContext(AuthContext);
 
     return (
         <View style={{flex:1}}>
@@ -130,9 +132,10 @@ export function DrawerContent(props) {
                             name="exit-to-app"
                             color={color}
                             size={size}
-                            onPress={() => {}}
+                            
                         />
                     )}
+                    onPress={() => {signOut()}}
                     label = "Sign Out"
                 />
             </Drawer.Section>

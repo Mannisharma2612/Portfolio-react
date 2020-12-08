@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StatusBar,  TextInput, StyleSheet, TouchableOpacity, Dimensions, Platform }
+import { View, Text, StatusBar,  TextInput, StyleSheet, TouchableOpacity, Platform }
  from 'react-native';
 
  import * as Animatable from 'react-native-animatable';
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
       paddingBottom: 50
   },
   footer: {
-      flex: 3,
+      flex: 4,
       backgroundColor: '#fff',
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,

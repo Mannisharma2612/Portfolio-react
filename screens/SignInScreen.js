@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, Text, StatusBar,  TextInput, StyleSheet, TouchableOpacity, Dimensions, Platform }
+import { View, Text, StatusBar,  TextInput, StyleSheet, TouchableOpacity, Platform }
  from 'react-native';
 
  import * as Animatable from 'react-native-animatable';
  import FontAwesome from 'react-native-vector-icons/FontAwesome';
  import Feather from 'react-native-vector-icons/Feather';
+
+ import { AuthContext } from '../components/context';
+ 
 
 const SignInScreen = ({navigation}) => {
 
@@ -14,6 +17,8 @@ const SignInScreen = ({navigation}) => {
         check_textInputChange: false,
         secureTextEntry: true
     }); 
+
+    const { signIn } = React.useContext(AuthContext);
 
     const textInputChange = (val) => {
         if(val.length != 0)
@@ -114,7 +119,7 @@ const SignInScreen = ({navigation}) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.button}>
-                <TouchableOpacity style={styles.appButtonContainer}>
+                <TouchableOpacity style={styles.appButtonContainer} onPress={() => {signIn()}}>
                     <Text style={styles.appButtonText}>Sign In</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')} 
