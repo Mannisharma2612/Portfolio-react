@@ -2,17 +2,20 @@ import React from 'react';
 import { View, Text, StatusBar,  TextInput, StyleSheet, TouchableOpacity, Platform }
  from 'react-native';
 
- import * as Animatable from 'react-native-animatable';
- import FontAwesome from 'react-native-vector-icons/FontAwesome';
- import Feather from 'react-native-vector-icons/Feather';
+import * as Animatable from 'react-native-animatable';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather';
 
- import { AuthContext } from '../components/context';
- 
+import { AuthContext } from '../components/context';
+
+
+
+
 
 const SignInScreen = ({navigation}) => {
 
     const [data, setData] = React.useState({  
-        email: '',
+        username: '',
         password:'',
         check_textInputChange: false,
         secureTextEntry: true
@@ -25,14 +28,14 @@ const SignInScreen = ({navigation}) => {
         {
           setData({
             ...data,
-            email: val,
+            username: val,
             check_textInputChange: true
           });
         }
         else{
           setData({
             ...data,
-            email: val,
+            username: val,
             check_textInputChange: false
           });
         }
@@ -54,6 +57,10 @@ const SignInScreen = ({navigation}) => {
     }
 
 
+    const loginHandle = (username, password) => {
+      signIn(username, password);
+    }
+
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#009387" barStyle="light-content"></StatusBar>
@@ -64,7 +71,7 @@ const SignInScreen = ({navigation}) => {
             style={styles.footer}
             animation="fadeInUpBig"
         >
-            <Text style={styles.text_footer}>Email</Text>
+            <Text style={styles.text_footer}>Username</Text>
             <View style={styles.action}>
                 <FontAwesome
                     name="user-o"
@@ -72,7 +79,7 @@ const SignInScreen = ({navigation}) => {
                     size={20}
                 />
                 <TextInput
-                    placeholder="Your Email"
+                    placeholder="Your Username"
                     style={styles.textInput}
                     autoCapitalize="none"
                     onChangeText = {(val) => textInputChange(val)}
@@ -119,7 +126,7 @@ const SignInScreen = ({navigation}) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.button}>
-                <TouchableOpacity style={styles.appButtonContainer} onPress={() => {signIn()}}>
+                <TouchableOpacity style={styles.appButtonContainer} onPress={() => {loginHandle( data.username, data.password )}}>
                     <Text style={styles.appButtonText}>Sign In</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')} 
