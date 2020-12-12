@@ -254,10 +254,11 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
     alignSelf: "center",
-    textTransform: "uppercase"
+    textAlign: 'center'
   },
   appButtonContainer:{
       elevation: 8,
+      width: '100%',
       backgroundColor: "#009688",
       borderRadius: 10,
       paddingVertical: 10,
