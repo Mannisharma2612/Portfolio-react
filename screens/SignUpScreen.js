@@ -162,6 +162,14 @@ const SignInScreen = ({navigation}) => {
                   }
                 </TouchableOpacity>
             </View>
+            <View style={styles.textPrivate}>
+                <Text style={styles.color_textPrivate}>
+                    By signing up you agree to our
+                </Text>
+                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Terms of service</Text>
+                <Text style={styles.color_textPrivate}>{" "}and</Text>
+                <Text style={[styles.color_textPrivate, {fontWeight: 'bold'}]}>{" "}Privacy policy</Text>
+            </View>
             <View style={styles.button}>
                 <TouchableOpacity style={styles.appButtonContainer}>
                     <Text style={styles.appButtonText}>Sign Up</Text>
@@ -263,5 +271,13 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       paddingVertical: 10,
       paddingHorizontal: 12
-  }
+  },
+   textPrivate: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        marginTop: 10
+    },
+    color_textPrivate: {
+        color: 'grey'
+    }
 });
