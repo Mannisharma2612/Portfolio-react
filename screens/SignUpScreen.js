@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   },
   button: {
       alignItems: 'center',
-      marginTop: 50
+      marginTop: 20
   },
   signIn: {
       width: '100%',

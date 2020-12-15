@@ -8,8 +8,8 @@ const HomeScreen = ({navigation}) => {
     const theme = useTheme();
 
     return (
-        <View style = {StyleSheet.container}>
-            <StatusBar barStyle={ theme.dark ? "light-content": "dark-content" } />
+        <View style = {styles.container}>
+            <StatusBar barStyle= { theme.dark ? "light-content" : "dark-content" }/>
             <Text style={{color: colors.text}}>Home Screen</Text>
             <Button
                 title="Go to Details Screen"
