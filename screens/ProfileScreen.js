@@ -5,12 +5,11 @@ import {
   Avatar,
   Title,
   Caption,
-  Text,
-  TouchableRipple
+  Text
 } from 'react-native-paper';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Slider from '../components/carouselSlider';
 
 const ProfileScreen = () => {
     
@@ -48,19 +47,9 @@ const ProfileScreen = () => {
             <Icon name="email" color="#777777" style={{marginLeft: 20}} size={20} />
             <Text style={{color:"#777777", marginLeft: 20}}>johnDoe@email.com</Text>
           </View>
-        </View>
-        <View style={styles.infoBoxWrapper}>
-            <View style={
-              [styles.infoBox,
-              {borderRightColor: '#dddddd', borderRightWidth: 1, backgroundColor: '#FFEC33'}]
-              }>
-              <FontAwesome name="github" color="#777777" style={{marginLeft: 20}} size={20}/>
-              <Text style={{color:"#777777", marginLeft: 20}}>johnDoe@email.com</Text>
-            </View>
-            <View style={[styles.infoBox,{backgroundColor:'#33EBFF'}]}>
-              <FontAwesome name="linkedin" color="#777777" style={{marginLeft: 20}} size={20}/>
-              <Text style={{color:"#777777", marginLeft: 20}}>johnDoe@email.com</Text>
-            </View>
+          <View style={styles.row}>
+              <Slider/>
+          </View>
         </View>
       </SafeAreaView> 
     );

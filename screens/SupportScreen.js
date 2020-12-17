@@ -1,19 +1,17 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View,StyleSheet } from 'react-native';
 
-const ExploreScreen = () => {
+import Slider from '../components/carouselSlider';
+
+const SupportScreen = () => {
     return (
       <View style={styles.container}>
-        <Text>Support Screen</Text>
-        <Button
-          title="Click Here"
-          onPress={() => alert('Button Clicked!')}
-        />
+        <Slider/>
       </View>
     );
 };
 
-export default ExploreScreen;
+export default SupportScreen;
 
 const styles = StyleSheet.create({
   container: {
