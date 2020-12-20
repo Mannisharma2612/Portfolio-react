@@ -9,7 +9,7 @@ import {
     Text,
     TouchableRipple,
     Switch,
-    useTheme
+    useTheme,
 } from 'react-native-paper';
 
 import { 
